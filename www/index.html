@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <title>TechScan</title>
+
+  <link href="css/material-icons.css" rel="stylesheet">
+  <link href="css/materialize.css" type="text/css" rel="stylesheet"/>
+  <link href="css/style.css" type="text/css" rel="stylesheet"/>
+  
+  <script src="lib/jquery-2.1.1.min.js"></script>
+  <script src="lib/materialize.js"></script>
+  <script src="lib/angular.min.js"></script>
+  <script src="lib/angular-ui-router.js"></script>
+  <script type="text/javascript" src="lib/angular-materialize.js"></script>
+  <script src="js/app.js"></script>
+  <script src="js/controllers/profileCtrl.js"></script>
+  <script src="js/controllers/repoCtrl.js"></script>
+  <script src="js/controllers/technologyCtrl.js"></script>
+  <script src="js/services/techServ.js"></script>
+  
+</head>
+<body ng-cloak ng-app="TechScan">
+	<div class="navbar-fixed">
+		<nav class="white">
+			<div class= "progress" style="height:3px;margin:0;" ng-if="showLoading">
+				<div class = "indeterminate green"></div>
+			</div>
+			<div>
+				<div class="row">
+					<div class="col s4">
+						<img src="img/logo.jpg" class="brand-logo" height="51px"/>
+					</div>
+					<div class="col s4">
+						<span class="lime-text accent-3 left"> TechScan </span>
+					</div>
+					<div class="col s4" ng-if="showLoading">
+						<div class="preloader-wrapper small active right">
+							<div class="spinner-layer spinner-blue-only">
+							  <div class="circle-clipper left">
+								<div class="circle"></div>
+							  </div><div class="gap-patch">
+								<div class="circle"></div>
+							  </div><div class="circle-clipper right">
+								<div class="circle"></div>
+							  </div>
+							</div>
+						</div>
+					</div>
+				</div>
+				
+			</div>
+		</nav>
+	</div>
+	<div class="container-fluid">
+		<div ui-view></div>
+	</div>
+</body>
+</html>

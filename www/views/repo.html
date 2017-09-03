@@ -1,0 +1,64 @@
+<div class="card-panel teal white" ng-init="sb=false" style="padding:4px;"> 
+	<div class="row" style="margin-bottom: 4px;">
+		<div class="col s12 m4">
+			<form>
+				<div class="input-field">
+					<i class="material-icons prefix">search</i> 
+					<input id="search" type="search" required>
+					<i class="material-icons" ng-click="sb=false">close</i>
+					<label for="icon_prefix">Keyword</label>
+				</div>
+			</form> 
+		</div>
+		<div class="col m2"><small>Repositories <span class="cast-ship">20k </span></small></div>
+		<div class="col m1"><small>Code <span class="cast-ship">20k </span></small></div>
+		<div class="col m2"><small>Commits <span class="cast-ship">20k </span></small></div>
+		<div class="col m1"><small>Issues<span class="cast-ship">20k </span></small></div>
+		<div class="col m1"><small>Wikis<span class="cast-ship">20k </span></small></div>
+		<div class="col m1"><small>Users<span class="cast-ship">20k </span></small></div>
+	</div>
+</div> 
+	<div class="row">
+		<div class="col m8 s12 card-panel teal white">
+			<div class="row" >
+				<div class="col m7 s12">
+					<b>{{repos.total_count}} repository results</b>
+				</div>
+				<div class="col m5 s12">
+				</div>
+			</div>
+			<hr/>
+			<div ng-repeat="r in repos.items">
+				<div class="row">
+					<div class="col s12 m7">
+						<a ui-sref="profile" ng-click="goToProfile(r.owner.login)">{{r.full_name}}</a>
+						<div>{{r.description}}</div>
+						<div class="grey-text lighten-1">updated {{nod(r.created_at)}} day<span ng-if="nod(r.created_at)>1">'s </span> ago.</div>
+					</div>
+					<div class="col s12 m3">
+						<div ng-if="r.name!=null"><i class="material-icons lighten-2 yellow-text tiny">fiber_manual_record</i>{{r.name}}</div>
+					</div>
+					<div class="col s12 m2">
+						<i class="material-icons tiny">grade</i> {{r.stargazers_count}}
+					</div>
+				</div>
+				<hr/>
+			</div>
+			
+		</div>
+		<div class="col m4 s12">
+			<ul class="collection">
+				<li class="collection-item">
+					<div><strong>Languages</strong></div>
+					<table>
+						<tbody>
+							<tr ng-repeat="l in listData">
+								<td>{{l.lan}}</td>
+								<td>{{l.rcount}}</td>
+							</tr>
+						</tbody>
+					</table>
+				</li>		
+			</ul>	
+		</div>
+	</div> 

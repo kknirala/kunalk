@@ -1,0 +1,10 @@
+
+body {
+    background-image: url("bgimg.png");
+    background-repeat: repeat;
+}
+.cast-ship{
+	padding: 2px;
+	background-color:#e0e0e0;
+	border-radius: 20%;
+}

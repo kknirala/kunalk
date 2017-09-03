@@ -1,0 +1,84 @@
+<div class="card-panel teal white">
+	<div class="row">
+		<div class="col m4 s12">
+			 <img ng-show="profile.items[0].avatar_url" ng-src="{{profile.items[0].avatar_url}}"  height="230" width="230"/>
+			 <img ng-hide="profile.items[0].avatar_url" src="img/defaultu.png"  height="230" width="230"/>
+			<div><b>{{profile.items[0].name}} </b> </div>
+			<div>{{profile.items[0].login}}</div>
+			<a href="" ng-click="ErrorReport()"> Block or report user</a>
+			<div><a href="{{profile.items[0].blog}}"> {{profile.items[0].blog}} </a></div>
+		</div>
+		<div class="col m8 s12">
+			<div class="row">
+				<div class="col s12 m12">
+				  <ul class="tabs grey-text darken-3">
+					<li class="tab col s6 m2"><a class="active grey-text darken-3" ng-click="getList(1)" href="#overView">Overview</a></li>
+					<li class="tab col s6 m3 grey-text darken-3"><a class=" grey-text darken-3" ng-click="getList(2)" href="#reposit">Repositories</a></li>
+					<li class="tab col s6 m2 grey-text darken-3"><a class=" grey-text darken-3" ng-click="getList(3)" href="#star">Stars</a></li>
+					<li class="tab col s6 m2 grey-text darken-3"><a class=" grey-text darken-3" ng-click="getList(4)" href="#follower">Followers</a></li>
+					<li class="tab col s6 m2 grey-text darken-3"><a class=" grey-text darken-3" ng-click="getList(5)" href="#followings">Following</a></li>
+				  </ul>
+				  <hr style="padding:0;margin:0;"/>
+				</div>
+				<div id="overView" class="col s12">
+					{{npApi}}
+				</div>
+				<div id="reposit" class="col s12">
+					<div class="collection row" ng-repeat="r in repos">
+						<div class="collection-item col s12 m6">
+							<div><a href="{{r.labels_url}}">{{r.name}}</a></div>
+							<div>{{r.description}}</div>
+							<div class="row">
+								<div ng-if="r.language" class="col"><i class="material-icons lighten-2 yellow-text tiny">fiber_manual_record</i>{{r.language}} </div>
+								<div ng-if="r.forks_count>0" class="col"><i class="material-icons tiny">device_hub</i>{{r.forks_count}}</div>
+								<div ng-if="r.stargazers_count>0" class="col"><i class="material-icons tiny">grade</i> {{r.stargazers_count}}</div>
+								<div class="grey-text lighten-1 col">updated {{nod(r.created_at)}} day<span ng-if="nod(r.created_at)>1">'s </span> ago.</div>
+							</div>
+						</div>
+					</div>
+					<div ng-show="noData">{{npApi}} </div>
+				</div>
+				<div id="star" class="col s12">
+					<div class="collection row" ng-repeat="r in stars">
+						<div class="collection-item col s12 m6">
+							<div><a href="{{r.labels_url}}">{{r.name}}</a></div>
+							<div>{{r.description}}</div>
+							<div class="row">
+								<div ng-if="r.language" class="col"><i class="material-icons lighten-2 yellow-text tiny">fiber_manual_record</i>{{r.language}} </div>
+								<div ng-if="r.forks_count>0" class="col"><i class="material-icons tiny">device_hub</i>{{r.forks_count}}</div>
+								<div ng-if="r.stargazers_count>0" class="col"><i class="material-icons tiny">grade</i> {{r.stargazers_count}}</div>
+								<div class="grey-text lighten-1 col">updated {{nod(r.created_at)}} day<span ng-if="nod(r.created_at)>1">'s </span> ago.</div>
+							</div>
+						</div>
+					</div>
+					<div ng-show="noData">{{npApi}} </div>
+				</div>
+				<div id="follower" class="col s12">
+					<div class="collection row" ng-repeat="r in followers">
+						<div class="collection-item col s12 m6">
+							<img src="{{t.avatar_url}}" class="responsive-img" height="40" width="40"/>
+							<a href="{{r.labels_url}}">{{r.name}}</a>
+							{{r.description}}
+						</div>
+					</div> 
+					<div ng-show="noData">{{npApi}} </div>
+				</div>
+				<div id="followings" class="col s12">
+					<div class="collection row" ng-repeat="r in following">
+						<div class="collection-item col s12 m6">
+							<img src="{{t.avatar_url}}" class="responsive-img" height="40" width="40"/>
+							<a href="{{r.labels_url}}">{{r.name}}</a>
+							{{r.description}}
+						</div>
+					</div> 
+					<div ng-show="noData">{{npApi}} </div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+<script>
+	$(document).ready(function(){
+    $('ul.tabs').tabs();
+  });
+</script>

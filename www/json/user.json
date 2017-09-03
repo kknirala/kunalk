@@ -1,0 +1,46 @@
+{
+"total_count": 2,
+"incomplete_results": false,
+"items": [
+{
+"login": "Jiharb",
+"id": 21320939,
+"avatar_url": "https://avatars2.githubusercontent.com/u/21320939?v=4",
+"gravatar_id": "",
+"url": "https://api.github.com/users/Jiharb",
+"html_url": "https://github.com/Jiharb",
+"followers_url": "https://api.github.com/users/Jiharb/followers",
+"following_url": "https://api.github.com/users/Jiharb/following{/other_user}",
+"gists_url": "https://api.github.com/users/Jiharb/gists{/gist_id}",
+"starred_url": "https://api.github.com/users/Jiharb/starred{/owner}{/repo}",
+"subscriptions_url": "https://api.github.com/users/Jiharb/subscriptions",
+"organizations_url": "https://api.github.com/users/Jiharb/orgs",
+"repos_url": "https://api.github.com/users/Jiharb/repos",
+"events_url": "https://api.github.com/users/Jiharb/events{/privacy}",
+"received_events_url": "https://api.github.com/users/Jiharb/received_events",
+"type": "User",
+"site_admin": false,
+"score": 14.751021
+},
+{
+"login": "JiHarber",
+"id": 17410483,
+"avatar_url": "https://avatars3.githubusercontent.com/u/17410483?v=4",
+"gravatar_id": "",
+"url": "https://api.github.com/users/JiHarber",
+"html_url": "https://github.com/JiHarber",
+"followers_url": "https://api.github.com/users/JiHarber/followers",
+"following_url": "https://api.github.com/users/JiHarber/following{/other_user}",
+"gists_url": "https://api.github.com/users/JiHarber/gists{/gist_id}",
+"starred_url": "https://api.github.com/users/JiHarber/starred{/owner}{/repo}",
+"subscriptions_url": "https://api.github.com/users/JiHarber/subscriptions",
+"organizations_url": "https://api.github.com/users/JiHarber/orgs",
+"repos_url": "https://api.github.com/users/JiHarber/repos",
+"events_url": "https://api.github.com/users/JiHarber/events{/privacy}",
+"received_events_url": "https://api.github.com/users/JiHarber/received_events",
+"type": "User",
+"site_admin": false,
+"score": 11.116272
+}
+]
+}
